@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Face tracker</title>
+	<meta charset="utf-8">
+	<link href="./clmtrackr-dev/examples/styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="facecontroller.css">
+	<script>
+		// getUserMedia only works over https in Chrome 47+, so we redirect to https. Also notify user if running from file.
+		if (window.location.protocol == "file:") {
+			alert("You seem to be running this example directly from a file. Note that these examples only work when served from a server or localhost due to canvas cross-domain restrictions.");
+		} else if (window.location.hostname !== "localhost" && window.location.protocol !== "https:") {
+			window.location.protocol = "https";
+		}
+	</script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-32642923-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body bgcolor="white">
+	<script src="./clmtrackr-dev/examples/js/libs/utils.js"></script>
+	<script src="./clmtrackr-dev/build/clmtrackr.js"></script>
+	<script src="./clmtrackr-dev/models/model_pca_20_svm.js"></script>
+	<script src="./clmtrackr-dev/examples/js/libs/Stats.js"></script>
+	<script src="./clmtrackr-dev/examples/js/libs/d3.min.js"></script>
+	<script src="./clmtrackr-dev/examples/js/emotion_classifier.js"></script>
+	<script src="./clmtrackr-dev/examples/js/emotionmodel.js"></script>
+	<script src="p5.min.js"></script>
+	<script src="p5.play.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <canvas id="movingface"></canvas>
+	<div id="content">
+		<div id="player">
+		<div id="container" class="inline">
+			<video id="videoel" width="200" height=150 preload="auto" loop playsinline autoplay>
+			</video>
+			<canvas id="overlay" width="200" height="150"></canvas>
+		</div>
+		<img src = "十字キー2.png" class="inline" id="tenkey">
+	</div>
+		<div id="emotion_container">
+
+			<div id="emotion_icons">
+				<img class="emotion_icon" id="icon1" src="./clmtrackr-dev/examples/media/icon_angry.png">
+				<img class="emotion_icon" id="icon2" src="./clmtrackr-dev/examples/media/icon_sad.png">
+				<img class="emotion_icon" id="icon3" src="./clmtrackr-dev/examples/media/icon_surprised.png">
+				<img class="emotion_icon" id="icon4" src="./clmtrackr-dev/examples/media/icon_happy.png">
+			</div>
+			<div id='emotion_chart'></div>
+		</div>
+	</div>
+	<div id="controls">
+		<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
+	</div>
+	<div id="game"></div>
+	<script type="text/javascript" src="facecontroller.js"></script>
+
+</body>
+
+</html>

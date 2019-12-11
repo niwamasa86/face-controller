@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+
+body {
+  font-family: 'Lato';
+  background-color: #fff;
+  margin: 0px auto;
+  max-width: 1150px;
+}
+
+#game{
+  display:none;
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index:10;
+}
+
+#overlay {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph;
+  /*IE*/
+  filter: fliph;
+  /*IE*/
+}
+#movingface{
+  display:none;
+  position:absolute;
+  top:20px;
+  left:10px;
+  width:100px;
+  height:100px;
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  z-index: 100010;
+}
+
+#videoel {
+  top: 20px;
+  left: 0px;
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph;
+  /*IE*/
+  filter: fliph;
+  /*IE*/
+}
+
+#player{
+  position: absolute;
+  z-index: 10001;
+  top:0px;
+  left:70% ;
+}
+#container {
+  display:inline-block;
+}
+
+#tenkey{
+  display:inline-block;
+  width:160px
+}
+
+#content {
+
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.btn {
+  font-family: 'Lato';
+  font-size: 16px;
+}
+
+#controls {
+
+  text-align: center;
+}
+
+#emotion_container {
+    display:none;
+  width: 600px;
+}
+
+#emotion_icons {
+  display:none;
+  height: 50px;
+  padding-left: 40px;
+}
+
+.emotion_icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  /*margin-left : 13px;*/
+  margin-left: 35px;
+}
+
+#emotion_chart,
+#emotion_icons {
+  margin: 0 auto;
+  width: 400px;
+}
+
+#icon1,
+#icon2,
+#icon3,
+#icon4,
+#icon5,
+#icon6 {
+  visibility: hidden;
+}
+
+/* d3 */
+.bar {
+  fill: steelblue;
+  fill-opacity: .9;
+}
+
+.inline{
+  display:inline-block;
+}
